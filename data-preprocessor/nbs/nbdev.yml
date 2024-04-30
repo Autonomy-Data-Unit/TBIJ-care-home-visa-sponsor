@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "data-preprocessor"
+  site-url: "https://lukastk.github.io/data-preprocessor"
+  description: ""
+  repo-branch: master
+  repo-url: "https://github.com/lukastk/data-preprocessor"
