@@ -268,6 +268,30 @@
             reset_distances();
         }
     }
+
+    // CSV
+
+    function download_csv() {
+        const exclude_cols = ["merc_x", "merc_y", "Type & Rating"];
+
+        let csvContent = "data:text/csv;charset=utf-8,";
+        let keys = Object.keys(data[0]);
+        keys = keys.filter((key) => !exclude_cols.includes(key));
+        csvContent += keys.join(",") + "\n";
+
+        data.forEach((row) => {
+            csvContent += keys.map((k) => row[k]).join(",") + "\n";
+        });
+
+        // Create a link and trigger download
+        var encodedUri = encodeURI(csvContent);
+        var link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "care_visa_sponsors.csv");
+        document.body.appendChild(link); // Required for FF
+
+        link.click(); // This will download the file
+    }
 </script>
 
 <div class="flex flex-col md:flex-row items-end py-4 justify-between">
@@ -327,9 +351,7 @@
 
             <Input
                 bind:value={search_postcode}
-                class={valid_postcode(search_postcode)
-                    ? ""
-                    : "text-red-500"}
+                class={valid_postcode(search_postcode) ? "" : "text-red-500"}
             ></Input>
         </div>
     </div>
@@ -390,7 +412,7 @@
                                     {:else if cell.id === "Organisation Name"}
                                         <a
                                             href="https://www.google.com/search?q={cell.value}"
-                                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            class="font-medium text-blue-400 hover:underline"
                                             target="_blank"
                                         >
                                             <Render of={cell.render()} />
@@ -416,23 +438,29 @@
     </Table.Root>
 </div>
 
-<div>
-    <div class="flex items-center justify-end space-x-4 py-4">
-        <Button
-            variant="outline"
-            size="sm"
-            on:click={() => ($pageIndex = $pageIndex - 1)}
-            disabled={!$hasPreviousPage}>Previous</Button
-        >
+<div class="flex flex-col md:flex-row justify-between py-4">
+    <Button variant="outline" on:click={download_csv}
+        >Download sponsor list</Button
+    >
 
-        &nbsp;
-        {$pageIndex + 1} out of {$pageCount}
+    <div>
+        <div class="flex items-center justify-end space-x-4">
+            <Button
+                variant="outline"
+                size="sm"
+                on:click={() => ($pageIndex = $pageIndex - 1)}
+                disabled={!$hasPreviousPage}>Previous</Button
+            >
 
-        <Button
-            variant="outline"
-            size="sm"
-            disabled={!$hasNextPage}
-            on:click={() => ($pageIndex = $pageIndex + 1)}>Next</Button
-        >
+            &nbsp;
+            {$pageIndex + 1} out of {$pageCount}
+
+            <Button
+                variant="outline"
+                size="sm"
+                disabled={!$hasNextPage}
+                on:click={() => ($pageIndex = $pageIndex + 1)}>Next</Button
+            >
+        </div>
     </div>
 </div>
