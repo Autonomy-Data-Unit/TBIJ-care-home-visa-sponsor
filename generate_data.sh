@@ -13,7 +13,7 @@ cp care-sponsors-scraper/data-out/current-skilled-home-care-sponsors.csv data-pr
 
 source API_KEY
 
-conda run -n data-preprocessor python -m data_preprocessor.create_location_lookupx
+conda run -n data-preprocessor python -m data_preprocessor.create_location_lookup
 
 cp data-preprocessor/data_preprocessor/store/output/current-skilled-home-care-sponsors-with-loc.csv care-sponsors-svelte-app/static/sponsors.csv
 cp data-preprocessor/data_preprocessor/store/output/place_merc_lookup.json care-sponsors-svelte-app/static/place_merc_lookup.json
