@@ -11,7 +11,7 @@ cd ..
 cp care-sponsors-scraper/data-out/all-skilled-home-care-sponsors.csv data-preprocessor/data_preprocessor/store/data/all-skilled-home-care-sponsors.csv
 cp care-sponsors-scraper/data-out/current-skilled-home-care-sponsors.csv data-preprocessor/data_preprocessor/store/data/current-skilled-home-care-sponsors.csv
 
-source API_KEY
+. ./API_KEY
 
 conda run -n data-preprocessor python -m data_preprocessor.create_location_lookup
 
