@@ -84,7 +84,7 @@
         }),
         table.column({
             accessor: "distance",
-            header: "Approximate distance (km)",
+            header: "Approximate distance",
             plugins: {
                 filter: {
                     exclude: true,
@@ -219,6 +219,24 @@
             ) *
             scale;
         return [x, y];
+    }
+
+    function formatDistanceAsStr(distance) {
+        if (distance < 1) {
+            return "Less than 1km";
+        } else if (distance < 5) {
+            return "Less than 5km";
+        } else if (distance < 10) {
+            return "5-10km";
+        } else if (distance < 50) {
+            return "10-50km";
+        } else if (distance < 100) {
+            return "50-100km";
+        } else if (distance < 500) {
+            return "100-500km";
+        } else {
+            return "500km or more";
+        }
     }
 
     // JavaScript doesn't have a built-in function to convert degrees to radians
@@ -418,12 +436,22 @@
                                             <Render of={cell.render()} />
                                         </a>
                                     {:else if cell.id === "distance"}
+                                        <!--
                                         <Render
                                             of={isNaN(parseFloat(cell.value))
                                                 ? ""
                                                 : parseFloat(
                                                       cell.value,
                                                   ).toFixed(1)}
+                                        />
+                                        -->
+
+                                        <Render
+                                            of={isNaN(parseFloat(cell.value))
+                                                ? ""
+                                                : formatDistanceAsStr(
+                                                      cell.value,
+                                                  )}
                                         />
                                     {:else}
                                         <Render of={cell.render()} />
