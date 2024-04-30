@@ -5,14 +5,8 @@
     import * as d3 from "d3";
     import { Skeleton } from "$lib/components/ui/skeleton";
 
-    type Payment = {
-        id: string;
-        amount: number;
-        status: "pending" | "processing" | "success" | "failed";
-        email: string;
-    };
 
-    let data: any[] = [];
+    let data = [];
     let place_merc_lookup;
     let isLoaded = false;
 

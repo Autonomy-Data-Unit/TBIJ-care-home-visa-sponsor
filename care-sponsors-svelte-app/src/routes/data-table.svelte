@@ -389,7 +389,7 @@
                                         </div>
                                     {:else if cell.id === "Organisation Name"}
                                         <a
-                                            href="https://www.google.com//search?q={cell.value}"
+                                            href="https://www.google.com/search?q={cell.value}"
                                             class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                             target="_blank"
                                         >
