@@ -15,6 +15,13 @@ const config = {
 			precompress: false,
 			strict: true
 		}),
+
+		// Setting the base path for the app
+		paths: {
+			base: '/adu/wp/2024_04_30_care-sponsors/app'
+		},
+
+		appDir: '_app',
 	},
 };
 

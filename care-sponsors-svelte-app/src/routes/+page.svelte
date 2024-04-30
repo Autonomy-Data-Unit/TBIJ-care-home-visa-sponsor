@@ -11,6 +11,7 @@
     let isLoaded = false;
 
     onMount(async () => {
+        console.log(`${base}/sponsors.csv`)
         data = await d3.csv(`${base}/sponsors.csv`);
         const response = await fetch(`${base}/place_merc_lookup.json`);
         place_merc_lookup = await response.json();
