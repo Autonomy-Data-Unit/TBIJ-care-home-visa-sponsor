@@ -323,7 +323,7 @@
         </div>
 
         <div class="flex flex-col md:ml-10">
-            <Label class="mb-2">Sort by postcode:</Label>
+            <Label class="mb-2">Search by postcode:</Label>
 
             <Input
                 bind:value={search_postcode}
