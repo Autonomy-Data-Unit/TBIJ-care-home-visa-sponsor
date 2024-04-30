@@ -270,9 +270,9 @@
     }
 </script>
 
-<div class="flex items-end py-4 justify-between">
-    <div class="flex justify-between">
-        <div class="flex flex-col">
+<div class="flex flex-col md:flex-row items-end py-4 justify-between">
+    <div class="flex flex-col md:flex-row w-full">
+        <div class="flex flex-col mb-4 md:mb-0">
             <Label class="mb-2">Search by location:</Label>
 
             <Popover.Root bind:open let:ids>
@@ -282,7 +282,7 @@
                         variant="outline"
                         role="combobox"
                         aria-expanded={open}
-                        class="w-[200px] justify-between"
+                        class="w-full md:w-[250px]  justify-between"
                     >
                         {selectedValue}
                         <ChevronsUpDown
@@ -290,7 +290,7 @@
                         />
                     </Button>
                 </Popover.Trigger>
-                <Popover.Content class="w-[200px] p-0">
+                <Popover.Content class="p-0 w-full md:w-[250px]">
                     <Command.Root>
                         <Command.Input
                             placeholder="Select location"
@@ -322,7 +322,7 @@
             </Popover.Root>
         </div>
 
-        <div class="flex flex-col ml-10">
+        <div class="flex flex-col md:ml-10">
             <Label class="mb-2">Sort by postcode:</Label>
 
             <Input
@@ -335,7 +335,7 @@
     </div>
 
     <Input
-        class="max-w-sm"
+        class="w-full mt-4 md:mt-0"
         placeholder="Filter organisations"
         type="text"
         bind:value={$filterValue}
