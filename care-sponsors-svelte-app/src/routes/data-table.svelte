@@ -351,7 +351,7 @@
 
             <Input
                 bind:value={search_postcode}
-                class={valid_postcode(search_postcode) ? "" : "text-red-500"}
+                class={`${valid_postcode(search_postcode) ? "" : "text-red-500"} uppercase`}
             ></Input>
         </div>
     </div>
