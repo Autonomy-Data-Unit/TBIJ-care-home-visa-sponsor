@@ -17,3 +17,9 @@ conda run -n data-preprocessor python -m data_preprocessor.create_location_looku
 
 cp data-preprocessor/data_preprocessor/store/output/current-skilled-home-care-sponsors-with-loc.csv care-sponsors-svelte-app/static/sponsors.csv
 cp data-preprocessor/data_preprocessor/store/output/place_merc_lookup.json care-sponsors-svelte-app/static/place_merc_lookup.json
+
+cd care-sponsors-svelte-app
+npm run build
+
+cd ..
+cp -r care-sponsors-svelte-app/build app
