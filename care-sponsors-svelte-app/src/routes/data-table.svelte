@@ -314,7 +314,16 @@
 
 <div class="flex flex-col md:flex-row items-end py-4 justify-between">
     <div class="flex flex-col md:flex-row w-full">
-        <div class="flex flex-col mb-4 md:mb-0">
+        <div class="flex flex-col mb-5 md:mb-0">
+            <Label class="mb-2">Search by postcode:</Label>
+
+            <Input
+                bind:value={search_postcode}
+                class={`${valid_postcode(search_postcode) ? "" : "text-red-500"} uppercase`}
+            ></Input>
+        </div>
+
+        <div class="flex flex-col md:ml-10 mb-2 md:mb-0">
             <Label class="mb-2">Search by location:</Label>
 
             <Popover.Root bind:open let:ids>
@@ -362,15 +371,6 @@
                     </Command.Root>
                 </Popover.Content>
             </Popover.Root>
-        </div>
-
-        <div class="flex flex-col md:ml-10">
-            <Label class="mb-2">Search by postcode:</Label>
-
-            <Input
-                bind:value={search_postcode}
-                class={`${valid_postcode(search_postcode) ? "" : "text-red-500"} uppercase`}
-            ></Input>
         </div>
     </div>
 
@@ -470,7 +470,7 @@
     <Button on:click={download_csv}>Download sponsor list</Button>
 
     <div>
-        <div class="flex items-center justify-end space-x-4">
+        <div class="flex items-center justify-center md:justify-end space-x-4 mt-4 md:mt-0">
             <Button
                 variant="outline"
                 size="sm"
