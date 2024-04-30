@@ -1,2 +1,5 @@
 # Setup
 
+```
+npm run build
+```
