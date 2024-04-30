@@ -439,9 +439,7 @@
 </div>
 
 <div class="flex flex-col md:flex-row justify-between py-4">
-    <Button variant="outline" on:click={download_csv}
-        >Download sponsor list</Button
-    >
+    <Button on:click={download_csv}>Download sponsor list</Button>
 
     <div>
         <div class="flex items-center justify-end space-x-4">
