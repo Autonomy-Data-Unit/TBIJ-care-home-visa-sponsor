@@ -1,5 +1,5 @@
 .envname
-/data_preprocessor/store/
+
 _proc/
 _docs/
 index_files/

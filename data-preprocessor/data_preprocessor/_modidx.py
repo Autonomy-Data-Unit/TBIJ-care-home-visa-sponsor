@@ -7,4 +7,7 @@ d = { 'settings': { 'branch': 'master',
                 'lib_path': 'data_preprocessor'},
   'syms': { 'data_preprocessor.const': {},
             'data_preprocessor.core': {'data_preprocessor.core.foo': ('core.html#foo', 'data_preprocessor/core.py')},
-            'data_preprocessor.create_location_lookup': {}}}
+            'data_preprocessor.create_location_lookup': { 'data_preprocessor.create_location_lookup.correct_placename': ( 'create_location_lookup.html#correct_placename',
+                                                                                                                          'data_preprocessor/create_location_lookup.py'),
+                                                          'data_preprocessor.create_location_lookup.lat_lng_to_mercator': ( 'create_location_lookup.html#lat_lng_to_mercator',
+                                                                                                                            'data_preprocessor/create_location_lookup.py')}}}

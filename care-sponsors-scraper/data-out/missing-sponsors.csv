@@ -1,22 +1,63 @@
 Organisation Name,Town/City,County,Type & Rating,First appeared,Last appeared,Status,Estimated days on register (max),Estimate confidence
+2M Health & Home Care Services Ltd,Leicester,,Worker (A rating),2022-06-01,2024-03-01,Active,723,Medium
+5 Care Services Limited,Walsall,West Midlands,Worker (A rating),2022-08-09,2024-03-01,Active,697,Medium
+Angels Care Solutions Limited,Barking,,Worker (A rating),2022-05-06,2024-03-01,Active,747,Medium
+Assured Community Care Ltd,Leicestershire,,Worker (A rating),2022-11-22,2024-03-01,Archived,544,Medium
+Axis Healthcare Ltd,GUILDFORD,,Worker (A rating),2022-05-06,2024-03-01,Active,747,Medium
+Bonza Care Ltd,Hatfield,Hertfordshire,Worker (A rating),2023-01-24,2024-03-01,Active,523,Medium
+Candela Healthcare Ltd,Hereford,,Worker (A rating),2023-03-06,2024-03-01,Active,445,Medium
+Care Connect Cheshire Ltd,Winsford,,Worker (A rating),2023-02-08,2024-03-01,Active,460,Medium
+Care Solutions North Yorkshire Ltd,Selby,North Yorkshire,Worker (A rating),2022-08-09,2024-03-01,Active,697,Medium
+Care2Victory Services Ltd,Greenwich,London,Worker (A rating),2022-11-22,2024-03-01,Active,544,Medium
+Connect Provider Limited,Aylesbury,Buckinghamshire,Worker (A rating),2023-07-05,2024-03-01,Active,307,Medium
+Destiney Social Care Provider Ltd,Sheffield,,Worker (A rating),2022-08-09,2024-03-01,Active,697,Medium
+Dobix Healthcare Ltd,Northampton,,Worker (A rating),2022-06-01,2024-03-01,Active,723,Medium
+Dynasty Care Services Limited,Croydon,,Worker (A rating),2022-03-11,2024-03-01,Active,802,Medium
+Efficiency Health and Homecare Services,Bristol,,Worker (A rating),2022-11-22,2024-03-01,Active,544,Medium
+Evoo Health Care Ltd,Cardiff,Cardiff,Worker (A rating),2022-02-16,2024-03-01,Archived,837,Medium
+EXPERT CARE SOLUTIONS LTD,WORCESTER PARK,,Worker (A rating),2022-08-09,2024-03-01,Active,697,Medium
+For You Social Care,Batley,,Worker (A rating),2021-07-26,2024-03-01,Archived,1115,Bad
+Fusco Browne Healthcare Ltd,Sheffield,,Worker (A rating),2021-07-26,2024-03-01,Active,1115,Bad
+Global M'ckarm International Care Services Limited,Aylesbury,,Worker (A rating),2023-05-05,2024-03-01,Active,368,Medium
+Gold Achievers Care Ltd,London,,Worker (A rating),2022-08-26,2024-03-01,Active,628,Medium
+HE Reigns Healthcare Services Ltd,Croydon,,Worker (A rating),2022-05-06,2024-03-01,Active,747,Medium
+Healthy Home Care Services Ltd,Boston,Lincolnshire,Worker (A rating),2021-09-30,2024-03-01,Active,1007,Medium
+Inspire Care Agencies Limited,Tonbridge,,Worker (A rating),2023-06-15,2024-03-01,Active,332,Medium
+Life Work Solutions,LONDON,,Worker (A rating),2023-06-26,2024-03-01,Active,318,Medium
+Macadamia Support Limited,Bedford,Bedfordshire,Worker (A (SME+)),2022-01-12,2024-03-01,Active,908,Bad
+Majestic Healthcare Ltd,Wolverhampton,,Worker (A rating),2022-01-12,2024-03-01,Active,908,Bad
+Oceans Care Services Ltd,Birmingham,West Midlands,Worker (A rating),2022-04-12,2024-03-01,Active,779,Medium
+Options Health Care Services Limited,Stevenage,,Worker (A rating),2022-02-16,2024-03-01,Active,837,Medium
+Orlando Care Homes Ltd,Milton Keynes,Buckinghamshire,Worker (A rating),2022-10-17,2024-03-01,Active,576,Medium
+Raynes Healthcare Ltd,Nottingham,,Worker (A rating),2022-02-16,2024-03-01,Active,837,Medium
+SNE Care Services Ltd,Middlesbrough,,Worker (A rating),2022-08-09,2024-03-01,Active,697,Medium
+Spring Healthcare Ltd,Bolton,,Worker (A rating),2022-08-09,2024-03-01,Archived,697,Medium
+Sunrise Healthcare Ltd,Norfolk,,Worker (A rating),2021-09-30,2024-03-01,Active,1007,Medium
+Tercare Ltd,Dartford,,Worker (A rating),2023-04-19,2024-03-01,Active,412,Medium
+Testimony Assembly Social Care Limited,Birmingham,,Worker (A rating),2022-06-01,2024-03-01,Archived,723,Medium
+The Intrinsic Care Group Limited,Chatham,Kent,Worker (A rating),2021-04-09,2024-03-01,Active,1248,Bad
+The Windmill Care Home,Great Yarmouth,,Worker (A rating),2022-11-22,2024-03-01,Archived,544,Medium
+Three Roses Ltd,Bristol,,Worker (A rating),2022-08-26,2024-03-01,Active,628,Medium
+Trustlink Care Services Ltd,Stoke on Trent,,Worker (A rating),2022-10-17,2024-03-01,Active,576,Medium
+UK Instant Services Ltd,Leicester,Leicestershire,Worker (A rating),2021-04-09,2024-03-01,Active,1248,Bad
+Ultimate Group Services East Midlands Limited,Nottingham,,Worker (A rating),2022-01-12,2024-03-01,Active,908,Bad
+Umuzi Healthcare Agency Ltd,Winchester,Hampshire,Worker (A rating),2023-09-15,2024-03-01,Active,233,Medium
+Veracity Healthcare Limited,Beverley,,Worker (A rating),2022-01-12,2024-03-01,Active,908,Bad
+Visionshealthcare Limited,Newmarket,,Worker (A rating),2022-06-01,2024-03-01,Active,723,Medium
+Willow Care & Support Ltd,Northampton,northamptonshire,Worker (A rating),2022-08-09,2024-03-01,Active,697,Medium
 Competent Healthcare Ltd,Southampton,,Worker (A rating),2022-11-22,2024-02-05,Active,480,Good
 Courage Limited,Luton,,Worker (A rating),2021-07-26,2024-02-05,Active,1051,Bad
-ELMS Health Solutions Ltd,Cambridge,,Worker (A rating),2020-07-27,2024-02-05,Active,-,-
 Felt Care Ltd,Nottingham,Nottinghamshire,Worker (A rating),2023-07-05,2024-02-05,Active,243,Good
 Harrow Carers,Harrow,,Worker (A rating),2022-03-11,2024-02-05,Active,738,Good
 Newbus Private Ltd,Middlesbrough,,Worker (A rating),2023-03-06,2024-02-05,Active,381,Good
 Pinnacle Brit Care Ltd,Thorpe Lea Road,Surrey,Worker (A rating),2022-08-09,2024-02-05,Active,633,Medium
 Rainbow Outreach and Healthcare Solutions Limited,Northallerton,,Worker (A rating),2022-01-12,2024-02-05,Active,844,Bad
 Senior Health Care Agency Ltd,London,Greater London,Worker (A rating),2022-03-11,2024-02-05,Active,738,Good
-Wandle Healthcare Services Limited,London,,Worker (A rating),2021-09-30,2024-02-05,Active,943,Medium
 Ace Care & Domestic Recruitment Agency Limited,50 Wakering Road,Essex,Worker (A rating),2022-09-02,2024-01-02,Active,526,Good
 Alpha Health & Social Care Services Ltd,Huntingdon,Cambridgeshire,Worker (A rating),2022-04-12,2024-01-02,Active,694,Good
-Amber Home Carers Ltd,London,,Worker (A (SME+)),2022-02-16,2024-01-02,Active,752,Good
 AmberGreen Health & Social Care Ltd,Luton,Bedfordshire,Worker (A rating),2021-07-26,2024-01-02,Active,1030,Bad
 Bethal Manna Care Ltd,Dartford,Kent,Worker (A rating),2022-05-06,2024-01-02,Active,662,Good
 Bithoms Support Services Ltd,Medway,Kent,Worker (A rating),2023-01-24,2024-01-02,Active,438,Medium
-Care1 Professional Services LTD,Hamilton,South Lanarkshire,Worker (A rating),2022-06-01,2024-01-02,Archived,638,Good
-CarePlus Healthcare Services Ltd,London,,Worker (A rating),2023-06-15,2024-01-02,Active,247,Good
 Caring Hands Nottingham Ltd,Nottingham,,Worker (A rating),2022-01-12,2024-01-02,Active,823,Bad
 Chislehurst Healthcare Ltd,Chislehurst,Greater London,Worker (A rating),2023-02-08,2024-01-02,Active,375,Good
 Chizhande Care Services Ltd,Wakefield,West Yorkshire,Worker (A rating),2022-05-06,2024-01-02,Active,662,Good
@@ -29,16 +70,12 @@ Fountain Based Limited,London,,Worker (A rating),2022-08-09,2024-01-02,Active,61
 Hepzibar Care Agency Limited,London,,Worker (A rating),2022-11-01,2024-01-02,Active,474,Good
 Immaculate Care Limited,HOUNSLOW,,Worker (A rating),2022-09-02,2024-01-02,Active,526,Good
 Invictus Plus Care Ltd,Trowbridge,Wiltshire,Worker (A rating),2021-07-26,2024-01-02,Active,1030,Bad
-Jewel Home Support (Lancs) Ltd,Chorley,,Worker (A (SME+)),2020-11-27,2024-01-02,Active,1192,Good
 Josak Care and Recruitment Ltd,Croydon,Surrey,Worker (A rating),2022-10-17,2024-01-02,Active,491,Good
-Kennores Healthcare Recruitment Limited,Leeds,,Worker (A rating),2022-05-06,2024-01-02,Active,662,Good
 Kreative Care Ltd,Rotherham,,Worker (A rating),2023-05-05,2024-01-02,Active,283,Good
 Lighthouse Professional Care Ltd,Warminster,Wiltshire,Worker (A rating),2021-09-30,2024-01-02,Active,922,Medium
-Nayland Care Agency Ltd,Ipswich,Suffolk,Worker (A rating),2022-08-09,2024-01-02,Active,612,Medium
 Oaktree Homecare Services Limited,London,,Worker (A rating),2022-08-26,2024-01-02,Active,543,Good
 Olives Healthcare Services Ltd,Charlton,London,Worker (A rating),2022-03-11,2024-01-02,Active,717,Good
 Paula Integrated Care Limited,Salford,,Worker (A rating),2023-01-24,2024-01-02,Active,438,Medium
-Peartree1 Ltd,Northampton,Northamptonshire,Worker (A rating),2022-08-09,2024-01-02,Active,612,Medium
 PPC Healthcare Ltd,Sheffield,,Worker (A rating),2022-08-09,2024-01-02,Active,612,Medium
 Purple Skilled Healthcare Limited,London,,Worker (A rating),2023-04-19,2024-01-02,Active,327,Medium
 Ram Personnel Healthcare Ltd,Gloucester,,Worker (A rating),2023-01-24,2024-01-02,Active,438,Medium
@@ -49,7 +86,6 @@ Tendi Care Ltd,Aylesford,Kent,Worker (A rating),2022-10-17,2024-01-02,Active,491
 The Flame Lily Healthcare Ltd,Wolverhampton,,Worker (A rating),2022-11-01,2024-01-02,Active,474,Good
 Triple E Healthcare Ltd,AYLESBURY,BUCKINGHAMSHIRE,Worker (A rating),2023-02-08,2024-01-02,Active,375,Good
 Woodward Healthcare Limited,Grays,Essex,Worker (A rating),2023-08-04,2024-01-02,Active,200,Good
-Bluewood Recruitment Ltd,Leicester,Leicestershire,Worker (A rating),2022-02-16,2023-12-05,Active,718,Good
 Bridge-it Options Ltd,Thatcham,Berkshire,Worker (A rating),2022-08-09,2023-12-05,Active,578,Medium
 Comfort Zone Care Services Ltd,luton,Bedfordshire,Worker (A rating),2021-09-30,2023-12-05,Active,888,Medium
 Eureka Care Services Limited,Hertford,Hertfordshire,Worker (A rating),2021-09-30,2023-12-05,Active,888,Medium
@@ -58,7 +94,6 @@ Fam Daily Care Ltd,London,Forest Gate,Worker (A rating),2023-04-19,2023-12-05,Ac
 Freedom and Lifestyle Limited,Birmingham,West Midlands,Worker (A rating),2023-03-06,2023-12-05,Active,326,Good
 Gloriavd Health Care Ltd,Leeds,West Yorkshire,Worker (A rating),2023-01-24,2023-12-05,Active,404,Medium
 His Grace And Mercy Services Ltd,Northampton,,Worker (A rating),2023-04-19,2023-12-05,Active,293,Medium
-Honor Care Limited,Smethwick,,Worker (A rating),2022-04-12,2023-12-05,Active,660,Good
 JWM Healthcare Ltd,Nottingham,Nottinghamshire,Worker (A rating),2022-08-09,2023-12-05,Active,578,Medium
 Lavender Care Agency Ltd,Wallington,Surrey,Worker (A rating),2022-03-11,2023-12-05,Active,683,Good
 Light Care Services Limited, Luton,Bedfordshire,Worker (A rating),2023-01-24,2023-12-05,Active,404,Medium
@@ -67,20 +102,16 @@ Luna 3-6-5 Healthcare Services Ltd,Wells,,Worker (A rating),2023-04-19,2023-12-0
 Macrita Ltd,Bristol,,Worker (A rating),2022-10-17,2023-12-05,Active,457,Good
 Maryland Care Agency Limited,Canning Town,,Worker (A rating),2022-01-12,2023-12-05,Active,789,Bad
 Medstar Care & Support Limited,Palmers Green,London,Worker (A rating),2022-10-17,2023-12-05,Active,457,Good
-Merit Care Limited,Cheltenham,GLOUCESTERSHIRE,Worker (A rating),2022-05-06,2023-12-05,Active,628,Good
 Namron Care Provider Ltd,Lincoln,,Worker (A rating),2023-04-19,2023-12-05,Active,293,Medium
 Promise Care Services Ltd,Essex,,Worker (A rating),2022-08-26,2023-12-05,Active,509,Good
 Victory Locum Limited,Milton Keynes,,Worker (A rating),2022-08-09,2023-12-05,Active,578,Medium
 Wisdom Healthcare Limited,Wolverhampton,,Worker (A rating),2022-08-09,2023-12-05,Archived,578,Medium
 A&RS Solutions Ltd,Southampton,,Worker (A rating),2023-06-01,2023-11-02,Active,194,Good
-A50 Ltd,Registered Manager,,Worker (A rating),2022-08-09,2023-11-02,Active,550,Medium
 Anco Care Services Limited,Milton Keynes,,Worker (A rating),2022-08-09,2023-11-02,Active,550,Medium
 Awesome Healthcare Solutions Limited,Sheffield,South Yorkshire,Worker (A rating),2020-07-27,2023-11-02,Active,-,-
-Care4us Health Care Limited,MANCHESTER,,Worker (A rating),2022-05-06,2023-11-02,Active,600,Good
 Delph House Care Home,Wisbech,Norfolk,Worker (A rating),2020-07-27,2023-11-02,Archived,-,-
 Edith Healthcare Wolverhampton Limited,Wolverhampton,,Worker (A rating),2023-08-04,2023-11-02,Active,138,Good
 EL Care Services Limited,Bolton,LANCS,Worker (A rating),2022-10-17,2023-11-02,Active,429,Good
-Fairplacecare Limited,London,,Worker (A rating),2023-03-06,2023-11-02,Active,298,Good
 GBU Care & Support Services Ltd,Normanton,,Worker (A rating),2023-01-24,2023-11-02,Active,376,Medium
 Iconia House Limited,Surrey,,Worker (A rating),2023-03-06,2023-11-02,Active,298,Good
 IXCEED HEALTH UK LTD,BRENTWOOD,,Worker (A rating),2023-03-06,2023-11-02,Active,298,Good
@@ -88,7 +119,6 @@ Kinsale Group Ltd,Leicester,East Midlands,Worker (A rating),2022-03-11,2023-11-0
 Perran Home Care Limited,Truro,,Worker (A rating),2023-05-23,2023-11-02,Active,201,Good
 Premier Care (Plymouth) Limited,Plymouth,Devon,Worker (A rating),2023-01-24,2023-11-02,Active,376,Medium
 Realcare+ Limited,Reading,Berkshire,Worker (A rating),2020-07-27,2023-11-02,Active,-,-
-Unique Personnel (UK) Limited,London,,Worker (A rating),2021-04-09,2023-11-02,Active,1101,Bad
 Almag Healthcare Limited,London,Greater London,Worker (A rating),2023-01-24,2023-10-13,Active,343,Medium
 Confident Care 24/7 Ltd,Canterbury,,Worker (A rating),2021-07-26,2023-10-13,Active,935,Bad
 Deeper Care Solutions Ltd,Harrogate,North Yorkshire,Worker (A rating),2021-07-26,2023-10-13,Active,935,Bad
@@ -150,13 +180,11 @@ New Hope Specialist Care Ltd,BIRMINGHAM,,Worker (A rating),2021-04-09,2022-11-22
 Woodlands Care Home,Gosforth,Newcastle Upon Tyne,Worker (A rating),2020-07-27,2022-11-22,Active,-,-
 Highlands Care Solutions,Southampton,,Worker (A rating),2021-04-09,2022-11-01,Active,723,Bad
 Merit Healthcare Ltd,Gloucester,,Worker (A rating),2022-01-12,2022-11-01,Active,383,Bad
-Sans Soucie Home Care Ltd,Guilford,Surrey,Worker (A rating),2022-01-12,2022-11-01,Active,383,Bad
 Surrey Care Partnership Ltd,Fleet,Hampshire,Worker (A rating),2022-04-12,2022-11-01,Active,254,Good
 Care Direct UK Limited,Anerley,,Worker (A rating),2020-07-27,2022-10-17,Active,-,-
 Oxford House,Newbury,Berkshire,Worker (A rating),2022-10-17,2022-10-17,Active,30,Good
 Acorn Hill Nursing Home,Leicester,,Worker (A rating),2021-04-09,2022-09-30,Archived,687,Bad
 Beacon House Nursing Home,Southall,,Worker (A rating),2020-07-27,2022-09-02,Archived,-,-
-Community Care Worker Limited,Hanley,Staffordshire,Worker (A rating),2021-07-26,2022-09-02,Active,537,Bad
 Magenta,London,,Worker (A rating),2020-07-27,2022-09-02,Active,-,-
 Revitalise Respite Holidays,London,,Worker (A rating),2020-07-27,2022-08-26,Archived,-,-
 Rapid Care Ltd,Kent,kent,Worker (A rating),2021-04-09,2022-08-09,Active,635,Bad
