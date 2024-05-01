@@ -292,14 +292,25 @@
     function download_csv() {
         const exclude_cols = ["merc_x", "merc_y", "Type & Rating"];
 
+        // Create a sorted copy of data
+        let sortedData = [...data].sort((a, b) => a.distance - b.distance);
+
         let csvContent = "data:text/csv;charset=utf-8,";
-        let keys = Object.keys(data[0]);
+        let keys = Object.keys(sortedData[0]);
         keys = keys.filter((key) => !exclude_cols.includes(key));
         csvContent += keys.join(",") + "\n";
 
-        data.forEach((row) => {
-            csvContent += keys.map((k) => row[k]).join(",") + "\n";
+        sortedData.forEach((row) => {
+            csvContent += keys.map(k => {
+                if (k === 'distance') {
+                    return isNaN(parseFloat(row[k])) ? "" : formatDistanceAsStr(row[k]);
+                } else {
+                    return row[k];
+                }
+            }).join(",") + "\n";
         });
+
+        
 
         // Create a link and trigger download
         var encodedUri = encodeURI(csvContent);
@@ -470,7 +481,9 @@
     <Button on:click={download_csv}>Download sponsor list</Button>
 
     <div>
-        <div class="flex items-center justify-center md:justify-end space-x-4 mt-4 md:mt-0">
+        <div
+            class="flex items-center justify-center md:justify-end space-x-4 mt-4 md:mt-0"
+        >
             <Button
                 variant="outline"
                 size="sm"
