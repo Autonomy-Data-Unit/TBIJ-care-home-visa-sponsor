@@ -2,3 +2,4 @@
 API_KEY
 /app
 upload_app_to_server.sh
+update_app.sh
