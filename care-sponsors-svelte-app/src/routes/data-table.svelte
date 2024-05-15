@@ -29,6 +29,14 @@
     let dataStore = writable(data);
     export let place_merc_lookup = {};
 
+    // Add url to org name
+    data.forEach((entry) => {
+        entry["Organisation Name"] = {
+            Name: entry["Organisation Name"],
+            URL: entry["Website"],
+        };
+    });
+
     const table = createTable(dataStore, {
         page: addPagination({
             initialPageSize: 12,
@@ -47,7 +55,7 @@
     const columns = table.createColumns([
         table.column({
             accessor: "Organisation Name",
-            header: "Organisation Name",
+            header: "Name",
             plugins: {
                 sort: {
                     disable: true,
@@ -56,6 +64,43 @@
                     fn: ({ filterValue, value }) =>
                         value.toLowerCase().includes(filterValue.toLowerCase()),
                 }),
+            },
+        }),
+        table.column({
+            accessor: "Provider name",
+            header: "Provider name",
+            plugins: {
+                sort: {
+                    disable: true,
+                },
+                filter: addTableFilter({
+                    fn: ({ filterValue, value }) =>
+                        value.toLowerCase().includes(filterValue.toLowerCase()),
+                }),
+            },
+        }),
+        table.column({
+            accessor: "CQC_URL",
+            header: "CQC page",
+            plugins: {
+                sort: {
+                    disable: true,
+                },
+                filter: {
+                    exclude: true,
+                },
+            },
+        }),
+        table.column({
+            accessor: "Postcode",
+            header: "Postcode",
+            plugins: {
+                sort: {
+                    disable: true,
+                },
+                filter: {
+                    exclude: true,
+                },
             },
         }),
         table.column({
@@ -152,9 +197,11 @@
                 );
                 e.distance /= 1000;
             });
+            
+            //distances_are_set = true;
+            data = [...data];
+            dataStore.set(data);
         }
-        data = [...data];
-        dataStore.set(data);
     }
 
     // Postcodes
@@ -245,6 +292,7 @@
     };
 
     const postcode_to_merc_lookup = {};
+    var distances_are_set = false;
 
     function update_distances(sx, sy) {
         data.forEach((e) => {
@@ -256,6 +304,7 @@
 
         data = [...data];
         dataStore.set(data);
+        distances_are_set = true;
     }
     function reset_distances() {
         data.forEach((e) => {
@@ -264,6 +313,7 @@
 
         data = [...data];
         dataStore.set(data);
+        distances_are_set = false;
     }
 
     $: {
@@ -283,7 +333,9 @@
                 update_distances(merc[0], merc[1]);
             }
         } else {
-            reset_distances();
+            if (distances_are_set) {
+                reset_distances();
+            }
         }
     }
 
@@ -301,16 +353,19 @@
         csvContent += keys.join(",") + "\n";
 
         sortedData.forEach((row) => {
-            csvContent += keys.map(k => {
-                if (k === 'distance') {
-                    return isNaN(parseFloat(row[k])) ? "" : formatDistanceAsStr(row[k]);
-                } else {
-                    return row[k];
-                }
-            }).join(",") + "\n";
+            csvContent +=
+                keys
+                    .map((k) => {
+                        if (k === "distance") {
+                            return isNaN(parseFloat(row[k]))
+                                ? ""
+                                : formatDistanceAsStr(row[k]);
+                        } else {
+                            return row[k];
+                        }
+                    })
+                    .join(",") + "\n";
         });
-
-        
 
         // Create a link and trigger download
         var encodedUri = encodeURI(csvContent);
@@ -440,11 +495,19 @@
                                         </div>
                                     {:else if cell.id === "Organisation Name"}
                                         <a
-                                            href="https://www.google.com/search?q={cell.value}"
+                                            href={cell.value["URL"]}
                                             class="font-medium text-blue-400 hover:underline"
                                             target="_blank"
                                         >
-                                            <Render of={cell.render()} />
+                                        <Render of={cell.value["Name"]} />
+                                        </a>
+                                    {:else if cell.id === "CQC_URL"}
+                                        <a
+                                            href={cell.value}
+                                            class="font-medium text-blue-400 hover:underline"
+                                            target="_blank"
+                                        >
+                                            Link
                                         </a>
                                     {:else if cell.id === "distance"}
                                         <!--

@@ -2,8 +2,8 @@
 
 # %% auto 0
 __all__ = ['lon_lat_lookup_path', 'df_worldcities', 'admin_lon_lats', 'df_sponsors', 'client', 'places_corrections_path',
-           'places', 'api_key', 'gmaps', 'place_merc_lookup', 'place_merc_lookup_path', 'xs', 'ys', 'correct_placename',
-           'lat_lng_to_mercator']
+           'places', 'api_key', 'gmaps', 'postcode_lon_lats_path', 'postcodes', 'place_merc_lookup',
+           'place_merc_lookup_path', 'xs', 'ys', 'correct_placename', 'lat_lng_to_mercator']
 
 # %% ../nbs/00_create_location_lookup.ipynb 4
 import warnings
@@ -153,7 +153,37 @@ for i, place in enumerate(places):
             
         success = True
 
-# %% ../nbs/00_create_location_lookup.ipynb 16
+# %% ../nbs/00_create_location_lookup.ipynb 17
+postcode_lon_lats_path = Path(const.output_path, "postcode_lon_lats.json")
+if postcode_lon_lats_path.is_file():
+    with open(postcode_lon_lats_path, "r") as f:
+        postcode_lon_lats = json.loads(f.read())
+else:
+    postcode_lon_lats = {}
+
+# %% ../nbs/00_create_location_lookup.ipynb 18
+api_key = os.environ.get('GOOGLE_MAPS_API_KEY')
+gmaps = googlemaps.Client(key=api_key)
+
+postcodes = set(df_sponsors['Postcode'])
+
+for i, postcode in enumerate(postcodes):
+    print(f"{i+1}/{len(postcodes)}", end='\r')
+    
+    if postcode in postcode_lon_lats:
+        continue
+    
+    success = False
+
+    result = gmaps.geocode(f"{postcode}, UK")
+    location = result[0]['geometry']['location']
+    
+    if location:
+        postcode_lon_lats[postcode] = location
+    else:
+        postcode_lon_lats[postcode] = -1
+
+# %% ../nbs/00_create_location_lookup.ipynb 19
 """
 geolocator = Nominatim(user_agent="Alex Guli")
 
@@ -191,14 +221,17 @@ for i, place in enumerate(places):
             time.sleep(30)
 """
 
-# %% ../nbs/00_create_location_lookup.ipynb 19
+# %% ../nbs/00_create_location_lookup.ipynb 22
 with open(lon_lat_lookup_path, 'w') as f:
     json.dump(place_lon_lat_lookup, f)
     
 with open(places_corrections_path, 'w') as f:
     json.dump(places_corrections, f)
+    
+with open(postcode_lon_lats_path, 'w') as f:
+    json.dump(postcode_lon_lats, f)
 
-# %% ../nbs/00_create_location_lookup.ipynb 20
+# %% ../nbs/00_create_location_lookup.ipynb 23
 def lat_lng_to_mercator(lat, lng):
     r_major = 6378137.000
     x = r_major * math.radians(lng)
@@ -207,19 +240,19 @@ def lat_lng_to_mercator(lat, lng):
         lat * (math.pi/180.0)/2.0)) * scale
     return (x, y)
 
-# %% ../nbs/00_create_location_lookup.ipynb 21
+# %% ../nbs/00_create_location_lookup.ipynb 24
 place_merc_lookup = { place : lat_lng_to_mercator(loc['lat'], loc['lng']) for place, loc in place_lon_lat_lookup.items() }    
 place_merc_lookup_path = Path(const.output_path, "place_merc_lookup.json")
 with open(place_merc_lookup_path, 'w') as f:
     json.dump(place_merc_lookup, f)
 
-# %% ../nbs/00_create_location_lookup.ipynb 24
+# %% ../nbs/00_create_location_lookup.ipynb 27
 df_sponsors = pd.read_csv(Path(const.data_path, "current-skilled-home-care-sponsors.csv"))
 df_sponsors['Town/City'] = df_sponsors['Town/City'].str.lower().str.strip()
 df_sponsors['Town/City'] = df_sponsors['Town/City'].replace(places_corrections)
 df_sponsors.head()
 
-# %% ../nbs/00_create_location_lookup.ipynb 25
+# %% ../nbs/00_create_location_lookup.ipynb 28
 xs, ys = [], []
 
 for i, row in df_sponsors.iterrows():
@@ -230,16 +263,23 @@ for i, row in df_sponsors.iterrows():
     else:
         place = f"{row['Town/City'].strip()}, {row['County'].strip()}".lower()
     
-    if place in place_lon_lat_lookup:
-        x, y = place_merc_lookup[place]
+    postcode = row['Postcode']
+    
+    if postcode in postcode_lon_lats and postcode_lon_lats[postcode] != -1:
+        x, y = lat_lng_to_mercator(postcode_lon_lats[postcode]['lat'], postcode_lon_lats[postcode]['lng'])
         xs.append(x)
         ys.append(y)
     else:
-        print(place)
-        xs.append(-1)
-        ys.append(-1)
+        if place in place_lon_lat_lookup:
+            x, y = place_merc_lookup[place]
+            xs.append(x)
+            ys.append(y)
+        else:
+            print(place)
+            xs.append(-1)
+            ys.append(-1)
 
-# %% ../nbs/00_create_location_lookup.ipynb 26
+# %% ../nbs/00_create_location_lookup.ipynb 30
 df_sponsors['merc_x'] = xs
 df_sponsors['merc_y'] = ys
 
