@@ -24,6 +24,7 @@
     import Check from "lucide-svelte/icons/check";
     import ChevronsUpDown from "lucide-svelte/icons/chevrons-up-down";
     import { writable } from "svelte/store";
+    import Papa from 'papaparse';
 
     export let data: any[] = [];
     let dataStore = writable(data);
@@ -349,32 +350,30 @@
 
         const _data = JSON.parse(JSON.stringify(data));
         _data.forEach((entry) => {
-            entry["Organisation Name"] = entry["Organisation Name"]['Name']
+            entry["Organisation Name"] = entry["Organisation Name"]["Name"];
         });
         let sortedData = [..._data].sort((a, b) => a.distance - b.distance);
 
-        let csvContent = "data:text/csv;charset=utf-8,";
         let keys = Object.keys(sortedData[0]);
         keys = keys.filter((key) => !exclude_cols.includes(key));
-        csvContent += keys.join(",") + "\n";
 
-        sortedData.forEach((row) => {
-            csvContent +=
-                keys
-                    .map((k) => {
-                        if (k === "distance") {
-                            return isNaN(parseFloat(row[k]))
-                                ? ""
-                                : formatDistanceAsStr(row[k]);
-                        } else {
-                            return row[k];
-                        }
-                    })
-                    .join(",") + "\n";
+        sortedData = sortedData.map((row) => {
+            return keys.reduce((obj, k) => {
+                obj[k] =
+                    k === "distance" && !isNaN(parseFloat(row[k]))
+                        ? formatDistanceAsStr(row[k])
+                        : row[k];
+                return obj;
+            }, {});
+        });
+
+        var csv = Papa.unparse({
+            fields: keys,
+            data: sortedData,
         });
 
         // Create a link and trigger download
-        var encodedUri = encodeURI(csvContent);
+        var encodedUri = encodeURI("data:text/csv;charset=utf-8," + csv);
         var link = document.createElement("a");
         link.setAttribute("href", encodedUri);
         link.setAttribute("download", "care_visa_sponsors.csv");
