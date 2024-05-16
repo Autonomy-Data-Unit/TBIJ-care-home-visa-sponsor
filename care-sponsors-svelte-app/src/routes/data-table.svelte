@@ -39,7 +39,7 @@
 
     const table = createTable(dataStore, {
         page: addPagination({
-            initialPageSize: 12,
+            initialPageSize: 8,
         }),
         sort: addSortBy({
             initialSortKeys: [
@@ -197,7 +197,7 @@
                 );
                 e.distance /= 1000;
             });
-            
+
             //distances_are_set = true;
             data = [...data];
             dataStore.set(data);
@@ -420,6 +420,8 @@
                                     value={place.value}
                                     onSelect={(currentValue) => {
                                         value = currentValue;
+                                        search_postcode = "";
+                                        //distances_are_set = true;
                                         closeAndFocusTrigger(ids.trigger);
                                     }}
                                 >
@@ -488,19 +490,36 @@
                     <Table.Row {...rowAttrs}>
                         {#each row.cells as cell (cell.id)}
                             <Subscribe attrs={cell.attrs()} let:attrs>
-                                <Table.Cell {...attrs}>
+                                <Table.Cell
+                                    {...attrs}
+                                    class="overflow-hidden min-w-0"
+                                >
                                     {#if cell.id === "Town/City"}
                                         <div class="capitalize">
                                             <Render of={cell.render()} />
                                         </div>
                                     {:else if cell.id === "Organisation Name"}
-                                        <a
-                                            href={cell.value["URL"]}
-                                            class="font-medium text-blue-400 hover:underline"
-                                            target="_blank"
-                                        >
-                                        <Render of={cell.value["Name"]} />
-                                        </a>
+                                        {#if cell.value["URL"]}
+                                            <a
+                                                href={cell.value["URL"]}
+                                                class="font-medium text-blue-400 hover:underline"
+                                                target="_blank"
+                                            >
+                                                <Render
+                                                    of={cell.value["Name"]}
+                                                />
+                                            </a>
+                                        {:else}
+                                            <a
+                                                href="https://www.google.com/search?q={cell.value["Name"]}"
+                                                class="font-medium text-blue-400 hover:underline"
+                                                target="_blank"
+                                            >
+                                                <Render
+                                                    of={cell.value["Name"]}
+                                                />
+                                            </a>
+                                        {/if}
                                     {:else if cell.id === "CQC_URL"}
                                         <a
                                             href={cell.value}
