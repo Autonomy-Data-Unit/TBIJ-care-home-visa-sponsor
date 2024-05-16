@@ -345,7 +345,13 @@
         const exclude_cols = ["merc_x", "merc_y", "Type & Rating"];
 
         // Create a sorted copy of data
-        let sortedData = [...data].sort((a, b) => a.distance - b.distance);
+        // Add url to org name
+
+        const _data = JSON.parse(JSON.stringify(data));
+        _data.forEach((entry) => {
+            entry["Organisation Name"] = entry["Organisation Name"]['Name']
+        });
+        let sortedData = [..._data].sort((a, b) => a.distance - b.distance);
 
         let csvContent = "data:text/csv;charset=utf-8,";
         let keys = Object.keys(sortedData[0]);
@@ -511,7 +517,8 @@
                                             </a>
                                         {:else}
                                             <a
-                                                href="https://www.google.com/search?q={cell.value["Name"]}"
+                                                href="https://www.google.com/search?q={cell
+                                                    .value['Name']}"
                                                 class="font-medium text-blue-400 hover:underline"
                                                 target="_blank"
                                             >
