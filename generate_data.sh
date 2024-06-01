@@ -1,6 +1,9 @@
+#!/bin/bash
 
+cd care-sponsors-scraper || exit
 
-cd care-sponsors-scraper
+python visa-sponsor-scraper.py
+python CQC-scraper.py
 
 python prep-sponsors-data.py
 python get-care-sponsors.py all
