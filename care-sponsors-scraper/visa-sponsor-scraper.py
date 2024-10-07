@@ -21,6 +21,8 @@ soup = BeautifulSoup(response.content, 'html.parser')
 # Finding the `a` tag with the specific class
 a_tag = soup.find('a', class_='gem-c-attachment__link')
 
+file_downloaded = False
+
 # Checking if the tag exists and retrieving the href attribute
 if a_tag:
     link = a_tag['href']
@@ -52,8 +54,19 @@ if a_tag:
         with open(path, 'wb') as f:
             f.write(file_response.content)
         print(f"File has been downloaded: {path}")
+        file_downloaded = True
     else:
         print("Failed to download the file.")
 
 else:
     print("No link found with the specified class.")
+
+if file_downloaded:
+    print("Verifying integrity of file")
+    import pandas as pd
+    try:
+        pd.read_csv(path)
+        print(f"File is valid: {path}")
+    except Exception as e:
+        print(f"File is corrupted: {path}")
+        os.remove(path)

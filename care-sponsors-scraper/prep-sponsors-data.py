@@ -22,31 +22,34 @@ all_sponsors = dict()
 
 # Loop through files
 for i, filename in enumerate(sponsors_files):
-	# Get the file date from the filename
-	file_date = filename[:10]
-	# Open the file
-	filepath = "sponsors-lists/csv/" + filename
-	with open(filepath) as infile:
-		reader = csv.DictReader(infile)
-		header = reader.fieldnames
-		# Keep only skilled sponsor
-		skilled_sponsor = [row for row in reader if is_skilled_worker_sponsor(row)]
-	# Loop through the skilled sponsors in the file
-	for sponsor in skilled_sponsor:
-		organisation_name = sponsor["Organisation Name"]
-		# If the sponsor is not yet in the dict
-		# - Add the file date as the first/last appeared date
-		# - And add the sponsor to the dict
-		if organisation_name not in all_sponsors:
-			sponsor["First appeared"] = file_date
-			sponsor["Last appeared"] = file_date
-			all_sponsors[organisation_name] = sponsor
-		# If the sponsor is already in the dict
-		# - Update the first appeared date
-		elif organisation_name in all_sponsors:
-			all_sponsors[organisation_name]["First appeared"] = file_date
-	# Print a process update
-	print("[*] Processed sponsors from {}/{} files".format((i + 1), len(sponsors_files)))
+	try:
+		# Get the file date from the filename
+		file_date = filename[:10]
+		# Open the file
+		filepath = "sponsors-lists/csv/" + filename
+		with open(filepath) as infile:
+			reader = csv.DictReader(infile)
+			header = reader.fieldnames
+			# Keep only skilled sponsor
+			skilled_sponsor = [row for row in reader if is_skilled_worker_sponsor(row)]
+		# Loop through the skilled sponsors in the file
+		for sponsor in skilled_sponsor:
+			organisation_name = sponsor["Organisation Name"]
+			# If the sponsor is not yet in the dict
+			# - Add the file date as the first/last appeared date
+			# - And add the sponsor to the dict
+			if organisation_name not in all_sponsors:
+				sponsor["First appeared"] = file_date
+				sponsor["Last appeared"] = file_date
+				all_sponsors[organisation_name] = sponsor
+			# If the sponsor is already in the dict
+			# - Update the first appeared date
+			elif organisation_name in all_sponsors:
+				all_sponsors[organisation_name]["First appeared"] = file_date
+		# Print a process update
+		print("[*] Processed sponsors from {}/{} files".format((i + 1), len(sponsors_files)))
+	except Exception as e:
+		print(f"Error processing {filepath}")
 
 # Remove the dict keys/Convert the dict to list of dict
 all_sponsors = [val for key, val in all_sponsors.items()]

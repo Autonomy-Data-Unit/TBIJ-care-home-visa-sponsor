@@ -35,6 +35,7 @@ care_services_csvs = [file for file in os.listdir("data-in/care-data") if file.e
 # Loop through all the care providers csvs
 for csv_file in care_services_csvs:
     filepath = "data-in/care-data/{}".format(csv_file)
+
     with open(filepath) as infile:
         reader = csv.DictReader(infile)
         care_orgs = [row for row in reader]
@@ -67,6 +68,7 @@ elif sponsor_status == "all":
 else:
     print("[!] Unexpected sponsor status")
     exit()
+    
 # Open the sponsors csv
 with open("data-out/all-skilled-sponsors.csv") as infile:
     reader = csv.DictReader(infile)
@@ -78,6 +80,7 @@ if sponsor_status == "current":
     sponsors_csv.sort()
     last_file_date = sponsors_csv[-1][:10]
     sponsors_data = [org for org in sponsors_data if org["Last appeared"] == last_file_date]
+
 
 
 # *** GET CARE SPONSORS ***
